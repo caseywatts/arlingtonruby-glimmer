@@ -3,8 +3,11 @@ import EventPresenter from './EventPresenter';
 import fetchMeetups from './fetchMeetups'
 
 export default class MeetupCardList extends Component {
-  numOfCardsToShow = 5;
   @tracked events
+
+  get numOfCardsToShow() {
+    return this.args.numOfCardsToShow || 5;
+  }
 
   constructor(options) {
     super(options);
