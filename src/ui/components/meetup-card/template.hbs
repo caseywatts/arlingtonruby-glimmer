@@ -1,3 +1,14 @@
-<div>
-  {{@event.text}}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a href={{@meetupEvent.event_url}} target="_blank">{{@meetupEvent.name}}</a>
+  </div>
+  <div class="panel-body">
+    <div class="col-sm-8">
+    </div>
+    <div class="col-sm-4">
+      <b>WHEN:</b> {{@meetupEvent.formattedDate}}
+      <br><b>WHERE:</b> <a href={{@meetupEvent.venueLink}} target="_blank">{{@meetupEvent.venue.name}}</a>
+      <br><b>WHO:</b> {{@meetupEvent.yes_rsvp_count}} already going
+    </div>
+  </div>
 </div>
