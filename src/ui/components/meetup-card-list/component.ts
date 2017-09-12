@@ -6,14 +6,11 @@ const meetupUrl = "https://api.meetup.com/2/events?offset=0&format=json&limited_
 
 export default class MeetupCardList extends Component {
   @tracked events = [];
+  @tracked numOfCardsToShow = 0;
 
   constructor(options) {
     super(options)
     this.loadMeetups();
-  }
-
-  get numOfCardsToShow() {
-    return 5;
   }
 
   @tracked('events', 'numOfCardsToShow')
@@ -21,11 +18,15 @@ export default class MeetupCardList extends Component {
     return this.events.slice(0, this.numOfCardsToShow);
   }
 
+  didUpdate() {
+    this.numOfCardsToShow = this.element.getAttribute('num-of-cards-to-show') || 5;
+  }
+
   loadMeetups() {
     fetchMeetups(meetupUrl).then((responseData) => {
       this.events = responseData.results.map((rawEventData) => {
         return EventPresenter(rawEventData);
-      })
+      });
     })
   }
 };
