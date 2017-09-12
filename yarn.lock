@@ -176,6 +176,10 @@
   version "0.26.2"
   resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.26.2.tgz#829e0cff7cee767689267f37533ea789da0bcc36"
 
+"@glimmer/web-component@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@glimmer/web-component/-/web-component-0.2.0.tgz#21840f61336e042482d6f0d3788fca9886e1d5d0"
+
 "@glimmer/wire-format@^0.26.2":
   version "0.26.2"
   resolved "https://registry.yarnpkg.com/@glimmer/wire-format/-/wire-format-0.26.2.tgz#5ff95a61c32c18bc65bd5b86af74bcbdd38e62d9"
