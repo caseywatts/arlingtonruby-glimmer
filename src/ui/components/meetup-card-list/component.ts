@@ -19,7 +19,11 @@ export default class MeetupCardList extends Component {
   }
 
   didUpdate() {
-    this.numOfCardsToShow = this.element.getAttribute('num-of-cards-to-show') || 5;
+    if (this.numOfCardsToShow) {
+      // noop
+    } else {
+      this.numOfCardsToShow = this.element.getAttribute('num-of-cards-to-show') || 5;
+    }
   }
 
   loadMeetups() {
