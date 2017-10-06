@@ -7,6 +7,7 @@ const meetupUrl = "https://api.meetup.com/2/events?offset=0&format=json&limited_
 export default class MeetupCardList extends Component {
   @tracked events = [];
   @tracked numOfCardsToShow = 0;
+  _hasInitializedAttributes = false;
 
   constructor(options) {
     super(options)
@@ -19,10 +20,11 @@ export default class MeetupCardList extends Component {
   }
 
   didUpdate() {
-    if (this.numOfCardsToShow) {
+    if (this._hasInitializedAttributes) {
       // noop
     } else {
       this.numOfCardsToShow = this.element.getAttribute('num-of-cards-to-show') || 5;
+      this._hasInitializedAttributes = true;
     }
   }
 
